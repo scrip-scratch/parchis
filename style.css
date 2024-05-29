@@ -1,0 +1,276 @@
+body {
+  overflow: hidden;
+  margin: 20px;
+}
+
+.playground {
+  width: 100vw;
+  height: 100vh;
+  min-width: 840px;
+  min-height: 710px;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  padding: 40px;
+}
+
+.path {  
+  width: 840px;
+  height: 710px;
+  display: flex;
+  align-items: center;  
+  position: relative;
+}
+
+.path-vertical {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.path-hor-left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  width: calc(40px * 6);
+  margin-right: 1px;
+  min-width: 282px;
+  max-width: 327px;
+  position: relative;
+}
+
+.path-hor-right {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(40px * 6);
+  margin-left: 5px;
+  min-width: 282px;
+  max-width: 327px;
+  position: relative;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+}
+
+.cell--disable {
+  border: none;
+}
+
+.cell__field-number {
+  position: absolute;
+  font-size: 12px;
+  left: 2px;
+  top: 2px;
+}
+
+.bullet {
+  width: 32px;
+  height: 32px;
+  border-radius: 500px;  
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+  box-sizing: border-box;
+}
+
+.bullet--selected {
+  border: 2px solid green;
+}
+
+.bullet--a {
+  background-color: lightcoral;
+}
+.bullet--b {
+  background-color: yellow;
+}
+.bullet--c {
+  background-color: lightblue;
+}
+.bullet--d {
+  background-color: lightgreen;
+}
+
+.bullet--disabled {
+  pointer-events: none;
+}
+
+@keyframes active-bullet {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.bullet--active {
+  transition: all .25s;
+  animation-name: active-bullet;
+  animation-iteration-count: infinite;
+  animation-duration: 500ms;
+}
+
+
+
+.path-start {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-shrink: 0;
+}
+
+.path-start--a {
+  right: 683px;
+  top: -89px;
+}
+.path-start--b {
+  right: 326px;
+  top: -308px;
+}
+.path-start--c {
+  right: 150px;
+  top: 88px;
+}
+.path-start--d {
+  right: 594px;
+  top: 307px;
+}
+
+.path-start-amount-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -9px;
+  right: -11px;
+  background-color: black;
+  color: aliceblue;
+  padding: 2px;
+}
+
+.path-base {  
+  position: absolute;
+  border-radius: 500px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.path-base--a {
+  right: 780px;
+  top: 158px;
+}
+.path-base--b {
+  right: 300px;
+  top: 25px;
+}
+.path-base--c {
+  right: 160px;
+  top: 505px;
+}
+.path-base--d {
+  right: 647px;
+  top: 642px;
+}
+
+.path-dice {
+  position: absolute;
+  top: 212px;
+  left: 427px;
+  width: 120px;
+  height: 60px;
+  border-radius: 14px;
+  border: 2px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.path-dice__item {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 80%;
+}
+
+.path-shelter {
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-shrink: 0;
+}
+
+.path-shelter--1 {
+  top: -88px;
+  left: -813px;
+}
+.path-shelter--2 {
+  top: -262px;
+  left: -682px;
+}
+.path-shelter--3 {
+  top: -263px;
+  left: -545px;
+}
+.path-shelter--4 {
+  top: -88px;
+  left: -415px;
+}
+.path-shelter--5 {
+  top: 88px;
+  left: -458px;
+}
+.path-shelter--6 {
+  top: 263px;
+  left: -678px;
+}
+.path-shelter--7 {
+  top: 263px;
+  left: -902px;
+}
+.path-shelter--8 {
+  top: -88px;
+  left: -282px;
+}
+
+.path-active-player {
+  position: absolute;
+  top: 188px;
+  left: 437px;
+}
